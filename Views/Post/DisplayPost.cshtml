@@ -1,0 +1,23 @@
+<br>
+<br>
+
+<p>@ViewBag.Owner says:</p>
+
+<p>@ViewBag.Post.postContent</p>
+<hr>
+<h5>People who "like" this "idea"</h5>
+<table class="table">
+    <thead>
+        <tr class="table-success">
+            <td>Alias</td>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var peep in @ViewBag.nerdList)
+{<tr class="table-secondary">
+    <td><a asp-action="ShowUser" asp-controller="User" asp-route-UserID="@peep.userID">@peep.alias</a></td>
+    <td>@peep.name</td>
+</tr>}
+</tbody>
+</table>

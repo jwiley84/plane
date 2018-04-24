@@ -1,0 +1,19 @@
+@using plane.Models
+@model plane.Models.PostViewModel
+<br>
+<br>
+<form asp-controller="Post" asp-action="Add" method="post">
+     <p>
+        <label for="postContent"></label>
+        <input type="text" name ="postContent" placholder="Post Something Witty Here:">
+        <span class="text-danger" asp-validation-for="postContent"></span>
+        <button class="btn btn-sm btn-primary">Idea!</button>
+    </p>
+
+
+</form>
+
+@if (ViewBag.errorMsg != null)
+{
+    <p class="text-danger">@ViewBag.errorMsg</p>
+}
